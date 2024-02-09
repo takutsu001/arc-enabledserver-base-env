@@ -1,6 +1,6 @@
 using 'main.bicep'
 
-param resourceGroupName = 'arc-enabledserver-RG'
+param resourceGroupName = 'Arc-enabledserver-RG'
 param resourceGroupLocation = 'japaneast'
 // ---- for Firewall Rule ----
 // your ip address for RDP (ex. xxx.xxx.xxx.xxx)
