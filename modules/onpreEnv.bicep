@@ -85,7 +85,20 @@ resource onpreVNet 'Microsoft.Network/virtualNetworks@2021-05-01' = {
 }
 
 // create VM in onpreVNet
-// create network interface for Linux VM
+// create public ip address for Windows VM
+resource publicIp 'Microsoft.Network/publicIPAddresses@2022-05-01' = {
+  name: '${onprevmName1}-pip'
+  location: location
+  sku: {
+    name: 'Standard'
+  }
+  properties: {
+    publicIPAllocationMethod: 'Static'
+    publicIPAddressVersion: 'IPv4'
+  }
+}
+
+// create network interface for Windows VM
 resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
   name: '${onprevmName1}-nic'
   location: location
@@ -104,7 +117,7 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
   }
 }
 
-// create Linux vm in onpre vnet
+// create Windows vm in onpre vnet
 resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
   name: onprevmName1
   location: location
