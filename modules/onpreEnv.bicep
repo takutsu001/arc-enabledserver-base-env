@@ -124,11 +124,6 @@ resource networkInterface 'Microsoft.Network/networkInterfaces@2023-04-01' = {
 resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
   name: onprevmName1
   location: location
-  plan: {
-    name: 'centos-8-0-free'
-    publisher: 'cognosys'
-    product: 'centos-8-0-free'
-  }
   properties: {
     hardwareProfile: {
       vmSize: vmSizeWindows
@@ -140,9 +135,9 @@ resource centosVM1 'Microsoft.Compute/virtualMachines@2023-03-01' = {
     }
     storageProfile: {
       imageReference: {
-        publisher: 'cognosys'
-       offer: 'centos-8-0-free'
-        sku: 'centos-8-0-free'
+        publisher: 'MicrosoftWindowsServer'
+       offer: 'WindowsServer'
+        sku: '2022-datacenter-azure-edition'
         version: 'latest'
       }
       osDisk: {
