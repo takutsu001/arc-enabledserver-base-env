@@ -1,7 +1,7 @@
 # arc-enabledserver-base-env
 
 ## はじめに
-本 Bicep は [***Arc enabled-Server 検証環境用***](https://zenn.dev/takutsu/articles/zenn-arc-enabledservers-instruction) のベース環境を作成するBicepです
+本 Bicep は [Arc enabled-Server 検証環境用](https://zenn.dev/takutsu/articles/zenn-arc-enabledservers-instruction) のベース環境を作成するBicepです
 
 ## 構成図
 ![](/images/arc-enabledserver-base-topology.png)
